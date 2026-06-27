@@ -1,46 +1,20 @@
 {
-	"name": "frontend",
-	"description": "Build a full-stack web application with React Router 7.",
-	"cloudflare": {
-		"label": "React Router Framework Starter",
-		"products": [
-			"Workers"
-		],
-		"categories": [
-			"storage"
-		],
-		"preview_icon_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/36a99c4a-8919-4e6e-ac9e-e55974407200/public",
-		"preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/65455e96-7992-425f-44e4-30f3e7d7f900/preview",
-		"publish": true
-	},
-	"dependencies": {
-		"isbot": "5.1.32",
-		"react": "19.2.1",
-		"react-dom": "19.2.1",
-		"react-router": "7.9.6"
-	},
-	"devDependencies": {
-		"@cloudflare/vite-plugin": "1.15.3",
-		"@react-router/dev": "7.9.6",
-		"@tailwindcss/vite": "4.1.17",
-		"@types/node": "24.10.1",
-		"@types/react": "19.2.7",
-		"@types/react-dom": "19.2.3",
-		"tailwindcss": "4.1.17",
-		"typescript": "5.9.3",
-		"vite": "^7.0.0",
-		"vite-tsconfig-paths": "5.1.4",
-		"wrangler": "4.88.0"
-	},
-	"private": true,
-	"scripts": {
-		"build": "react-router build",
-		"cf-typegen": "wrangler types && react-router typegen",
-		"check": "tsc && react-router build && wrangler deploy --dry-run",
-		"deploy": "wrangler deploy",
-		"dev": "react-router dev",
-		"preview": "npm run build && vite preview",
-		"typecheck": "npm run typegen && tsc -b"
-	},
-	"type": "module"
+  "name": "stitch_vulktek_security_launch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fonts": "download-googlefonts \"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap\" fonts",
+    "icons": "download-googlefonts \"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap\" icons",
+    "build:css": "tailwindcss -i input.css -o style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^3.4.19"
+  }
 }
