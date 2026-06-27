@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-on-background min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-body-md text-body-md selection:bg-tech-orange/30 selection:text-white scanline-effect bg-surface-dim">
+<body class="text-on-background min-h-screen flex flex-col items-center relative overflow-x-hidden font-body-md text-body-md selection:bg-tech-orange/30 selection:text-white scanline-effect bg-surface-dim">
 <!-- Subtle Animated Grid Background -->
-<div class="absolute inset-0 grid-bg pointer-events-none opacity-40"></div>
+<div class="fixed inset-0 grid-bg pointer-events-none opacity-40"></div>
 <!-- Background Glow Effects -->
-<main class="relative z-10 w-full max-w-4xl px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center">
+<main class="relative z-10 w-full max-w-4xl px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center pt-xl">
 <!-- Logo Update -->
 <div class="mb-xl relative mb-12 flex items-center justify-center"><img alt="Vulktek Cybersecurity Logo" class="relative h-40 md:h-48 w-auto object-contain z-10 drop-shadow-[0_0_15px_rgba(255,77,0,0.5)] scale-125" src="images/logo.png"/></div>
 <!-- Heading & Subheading -->
@@ -50,7 +50,7 @@
 </div>
 </div>
 </main>
-<section class="relative z-20 w-full max-w-md glass-panel p-lg rounded-xl mb-xl mx-auto text-center transition-all duration-300 hover:border-tech-orange/40">
+<section class="relative z-20 w-[calc(100%-32px)] max-w-md glass-panel p-lg rounded-xl mb-xl mx-auto text-center transition-all duration-300 hover:border-tech-orange/40">
 <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-tech-orange/50 to-transparent"></div>
 <p class="font-label-sm text-label-sm text-tech-orange uppercase tracking-widest mb-sm">Contact Us</p>
 <button aria-describedby="copy-feedback" class="inline-flex items-center justify-center gap-2 rounded px-sm py-xs text-white font-label-md text-label-md font-mono hover:text-tech-orange focus:outline-none focus:ring-1 focus:ring-tech-orange transition-colors cursor-pointer" data-copy-email="firebirdcyber@gmail.com" type="button">
@@ -59,7 +59,7 @@
     </button>
 <p aria-live="polite" class="mt-sm min-h-[20px] font-label-sm text-label-sm text-on-surface-variant" id="copy-feedback"></p>
 </section>
-<footer class="absolute bottom-0 w-full py-md border-t border-outline/30 bg-background/80 backdrop-blur-md z-10 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop">
+<footer class="relative mt-auto w-full py-md border-t border-outline/30 bg-background/80 backdrop-blur-md z-10 flex flex-col md:flex-row justify-between items-center gap-sm px-margin-mobile md:px-margin-desktop">
 <div class="font-headline-sm text-headline-sm font-bold text-white mb-sm md:mb-0 flex items-center gap-2">
 <img alt="Vulktek mark" class="h-6 w-auto brightness-200" src="images/mark.png"/>
 </div>

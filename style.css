@@ -773,10 +773,6 @@ input:where([type='file']):focus {
   top: -1px;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .left-10 {
   left: 2.5rem;
 }
@@ -830,6 +826,10 @@ input:where([type='file']):focus {
   margin-top: 2rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .mt-sm {
   margin-top: 8px;
 }
@@ -880,6 +880,10 @@ input:where([type='file']):focus {
 
 .w-\[70\%\] {
   width: 70%;
+}
+
+.w-\[calc\(100\%-32px\)\] {
+  width: calc(100% - 32px);
 }
 
 .w-auto {
@@ -950,6 +954,10 @@ input:where([type='file']):focus {
   gap: 0.5rem;
 }
 
+.gap-sm {
+  gap: 8px;
+}
+
 .space-y-lg > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
@@ -958,6 +966,10 @@ input:where([type='file']):focus {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded {
@@ -1084,6 +1096,10 @@ input:where([type='file']):focus {
 .py-xs {
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.pt-xl {
+  padding-top: 40px;
 }
 
 .text-left {
