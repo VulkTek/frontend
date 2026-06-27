@@ -2,27 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 const dist = path.join(__dirname, 'dist');
-if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true });
+fs.rmSync(dist, { recursive: true, force: true });
+fs.mkdirSync(dist, { recursive: true });
 
-const filesToCopy = ['index.html', 'style.css', 'script.js'];
-filesToCopy.forEach(f => {
-    if (fs.existsSync(f)) {
-        fs.copyFileSync(f, path.join(dist, f));
-    }
-});
+for (const file of ['index.html', 'style.css']) {
+  fs.copyFileSync(path.join(__dirname, file), path.join(dist, file));
+}
 
-const dirsToCopy = ['images', 'fonts'];
-dirsToCopy.forEach(dir => {
-    if (fs.existsSync(dir)) {
-        const destDir = path.join(dist, dir);
-        if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
-        const files = fs.readdirSync(dir);
-        files.forEach(file => {
-            const srcPath = path.join(dir, file);
-            if (fs.statSync(srcPath).isFile()) {
-                fs.copyFileSync(srcPath, path.join(destDir, file));
-            }
-        });
-    }
-});
+for (const dir of ['images']) {
+  fs.cpSync(path.join(__dirname, dir), path.join(dist, dir), { recursive: true });
+}
+
 console.log('Build output copied to dist/');

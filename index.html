@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 </head>
 <body class="text-on-background min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-body-md text-body-md selection:bg-tech-orange/30 selection:text-white scanline-effect bg-surface-dim">
 <!-- Subtle Animated Grid Background -->
@@ -51,36 +50,20 @@
 </div>
 </div>
 </main>
-<!-- Glassmorphic CTA Form -->
-<form class="relative z-20 w-full max-w-md glass-panel p-lg rounded-xl mb-xl mx-auto transition-all duration-300 hover:border-tech-orange/40" onsubmit="event.preventDefault();">
+<section class="relative z-20 w-full max-w-md glass-panel p-lg rounded-xl mb-xl mx-auto text-center transition-all duration-300 hover:border-tech-orange/40">
 <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-tech-orange/50 to-transparent"></div>
-<label class="block font-label-md text-label-md text-white mb-sm text-left flex items-center gap-2" for="email">
-<span class="material-symbols-outlined text-[18px] text-tech-orange">lock</span>
-        Secure Early Access
-    </label>
-<div class="flex flex-col sm:flex-row gap-sm">
-<div class="relative flex-grow">
-<span class="absolute inset-y-0 left-0 flex items-center pl-sm pointer-events-none text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">terminal</span>
-</span>
-<input class="w-full bg-surface-container-lowest/50 border border-outline/50 text-white rounded font-label-md text-label-md py-sm pl-[36px] pr-sm focus:outline-none focus:border-tech-orange focus:ring-1 focus:ring-tech-orange transition-colors placeholder:text-on-surface-variant/50 font-mono" id="email" placeholder="engineer@enterprise.com" required="" type="email"/>
-</div>
-<button class="bg-tech-orange text-white font-label-md text-label-md px-lg py-sm rounded hover:bg-orange-600 transition-all duration-200 shadow-[0_0_15px_rgba(255,77,0,0.2)] hover:shadow-[0_0_20px_rgba(255,77,0,0.4)] whitespace-nowrap flex items-center justify-center gap-2 group font-bold" type="submit">
-            Initialize
-            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</div>
-<div class="flex justify-between items-center mt-sm">
-<p class="font-label-sm text-label-sm text-on-surface-variant text-left opacity-70">Encrypted comms only.</p>
-<span class="material-symbols-outlined text-[14px] text-tech-orange opacity-70">verified_user</span>
-</div>
-</form>
+<p class="font-label-sm text-label-sm text-tech-orange uppercase tracking-widest mb-sm">Contact Us</p>
+<a class="inline-flex items-center justify-center gap-2 text-white font-label-md text-label-md font-mono hover:text-tech-orange transition-colors" href="mailto:firebirdcyber@gmail.com">
+<span class="material-symbols-outlined text-[18px] text-tech-orange">mail</span>
+        firebirdcyber@gmail.com
+    </a>
+</section>
 <footer class="absolute bottom-0 w-full py-md border-t border-outline/30 bg-background/80 backdrop-blur-md z-10 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop">
 <div class="font-headline-sm text-headline-sm font-bold text-white mb-sm md:mb-0 flex items-center gap-2">
 <img alt="Vulktek mark" class="h-6 w-auto brightness-200" src="images/mark.png"/>
 </div>
 <div class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[10px] uppercase">
-            © 2024 Vulktek Cybersecurity. All rights reserved.
+            &copy; 2024 Vulktek Cybersecurity. All rights reserved.
         </div>
 </footer>
 </body></html>
