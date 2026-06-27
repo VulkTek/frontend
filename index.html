@@ -53,10 +53,11 @@
 <section class="relative z-20 w-full max-w-md glass-panel p-lg rounded-xl mb-xl mx-auto text-center transition-all duration-300 hover:border-tech-orange/40">
 <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-tech-orange/50 to-transparent"></div>
 <p class="font-label-sm text-label-sm text-tech-orange uppercase tracking-widest mb-sm">Contact Us</p>
-<a class="inline-flex items-center justify-center gap-2 text-white font-label-md text-label-md font-mono hover:text-tech-orange transition-colors" href="mailto:firebirdcyber@gmail.com">
+<button aria-describedby="copy-feedback" class="inline-flex items-center justify-center gap-2 rounded px-sm py-xs text-white font-label-md text-label-md font-mono hover:text-tech-orange focus:outline-none focus:ring-1 focus:ring-tech-orange transition-colors cursor-pointer" data-copy-email="firebirdcyber@gmail.com" type="button">
 <span class="material-symbols-outlined text-[18px] text-tech-orange">mail</span>
         firebirdcyber@gmail.com
-    </a>
+    </button>
+<p aria-live="polite" class="mt-sm min-h-[20px] font-label-sm text-label-sm text-on-surface-variant" id="copy-feedback"></p>
 </section>
 <footer class="absolute bottom-0 w-full py-md border-t border-outline/30 bg-background/80 backdrop-blur-md z-10 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop">
 <div class="font-headline-sm text-headline-sm font-bold text-white mb-sm md:mb-0 flex items-center gap-2">
@@ -64,6 +65,46 @@
 </div>
 <div class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[10px] uppercase">
             &copy; 2024 Vulktek Cybersecurity. All rights reserved.
-        </div>
+</div>
 </footer>
+<script>
+const contactButton = document.querySelector('[data-copy-email]');
+const copyFeedback = document.getElementById('copy-feedback');
+let copyFeedbackTimeout;
+
+async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}
+
+if (contactButton && copyFeedback) {
+    contactButton.addEventListener('click', async () => {
+        const email = contactButton.dataset.copyEmail;
+
+        try {
+            await copyText(email);
+            copyFeedback.textContent = 'Copied to clipboard.';
+        } catch {
+            copyFeedback.textContent = `Copy failed. Email: ${email}`;
+        }
+
+        window.clearTimeout(copyFeedbackTimeout);
+        copyFeedbackTimeout = window.setTimeout(() => {
+            copyFeedback.textContent = '';
+        }, 2400);
+    });
+}
+</script>
 </body></html>
